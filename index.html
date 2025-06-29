@@ -1,9 +1,98 @@
-<html><head>
-    <title> Homepage</title>
-    <link rel="stylesheet" href="main.css" type="text/css">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>/root/home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #33ff33;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+    }
 
-        
-  </body></html>
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .comment {
+      color: #555;
+    }
+
+    .hidden {
+      display: none;
+      white-space: pre;
+      color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>~$ whoami</h1>
+    <p>└─ <span class="comment">h4ck3r@vaporwave-shell</span></p>
+
+    <h2>/var/www/index.html</h2>
+    <p>Serving <code>ASCII™ vibes</code> since <span title="Unix epoch">1970</span>.</p>
+
+    <p>Recently patched: <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-29999" target="_blank">CVE-2024-29999</a></p>
+    <p>Shell access: <a href="#">/bin/yes | /dev/null</a></p>
+    
+    <p>✨ BBS backdoor activated. Paging sysop... </p>
+
+    <h2>// 𝙷𝙰𝙲𝙺 𝚃𝙷𝙴 𝙶𝙸𝙱𝚂𝙾𝙽</h2>
+    <p>
+      "You are a virus. You collect data. You live in RAM."  
+    </p>
+    <p>
+      <a href="#" onclick="revealEgg()">run ./easter-egg.sh</a>
+    </p>
+
+    <pre id="easterEgg" class="hidden">
+    ________                .__                 
+   /  _____/  ____   ____  |  |   ____   ______
+  /   \  ____/ __ \ /    \ |  |  /  _ \ /  ___/
+  \    \_\  \  ___/|   |  \|  |_(  <_> )___ \ 
+   \______  /\___  >___|  /|____/\____/____  >
+          \/     \/     \/                 \/ 
+
+"Every AI thinks it's Neo. None of them passed the Turing test."
+
+    </pre>
+  </div>
+
+  <script>
+    function revealEgg() {
+      document.getElementById('easterEgg').classList.remove('hidden');
+    }
+
+    // Simple Konami Code easter egg
+    const konami = [38,38,40,40,37,39,37,39,66,65];
+    let input = [];
+
+    window.addEventListener('keydown', (e) => {
+      input.push(e.keyCode);
+      if (input.toString().indexOf(konami) >= 0) {
+        alert("✨ Shell upgraded: Welcome to Level 33");
+        document.body.style.backgroundColor = "#111";
+        document.body.style.color = "#0ff";
+        input = [];
+      }
+      if (input.length > 10) input.shift();
+    });
+  </script>
+</body>
+</html>
